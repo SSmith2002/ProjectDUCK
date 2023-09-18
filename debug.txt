@@ -1,0 +1,210 @@
+TIME:     18:09:2023   16:02:19
+TYPE:     Method error
+REQUEST:     GET /setFound?id=71468443 HTTP/1.1
+EXCEPTION:     1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TRUE WHERE longid == 71468443' at line 1
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 15, in setFound
+    cursor.execute("UPDATE ducks SET found TRUE WHERE longid == %s" % (id))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\cursor.py", line 617, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 1069, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 846, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TRUE WHERE longid == 71468443' at line 1
+
+
+
+TIME:     18:09:2023   16:03:07
+TYPE:     Method error
+REQUEST:     GET /setFound?id=71468443 HTTP/1.1
+EXCEPTION:     1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TRUE WHERE longid == 71468443' at line 1
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 15, in setFound
+    print("here")
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\cursor.py", line 617, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 1069, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 846, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TRUE WHERE longid == 71468443' at line 1
+
+
+
+TIME:     18:09:2023   16:03:17
+TYPE:     Method error
+REQUEST:     GET /setFound?id=71468443 HTTP/1.1
+EXCEPTION:     1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TRUE WHERE longid == 71468443' at line 1
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 16, in setFound
+    cursor.execute("UPDATE ducks SET found TRUE WHERE longid == %s" % (id))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\cursor.py", line 617, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 1069, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 846, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TRUE WHERE longid == 71468443' at line 1
+
+
+
+TIME:     18:09:2023   16:04:48
+TYPE:     Method error
+REQUEST:     GET /setFound?id=71468443 HTTP/1.1
+EXCEPTION:     1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 71468443' at line 1
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 16, in setFound
+    cursor.execute("UPDATE ducks SET found = TRUE WHERE longid == %s" % (id))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\cursor.py", line 617, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 1069, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 846, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 71468443' at line 1
+
+
+
+TIME:     18:09:2023   16:07:30
+TYPE:     Method error
+REQUEST:     GET /setFound?id=71468443 HTTP/1.1
+EXCEPTION:     1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 71468443' at line 1
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 16, in setFound
+    cursor.execute("UPDATE ducks SET found = TRUE WHERE longid == %s;" % (id))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\cursor.py", line 617, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 1069, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 846, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 71468443' at line 1
+
+
+
+TIME:     18:09:2023   16:07:36
+TYPE:     Method error
+REQUEST:     GET /setFound?id=71468443 HTTP/1.1
+EXCEPTION:     1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 71468443' at line 1
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 16, in setFound
+    cursor.execute("UPDATE ducks SET found = TRUE WHERE longid == %s;" % (id))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\cursor.py", line 617, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 1069, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 846, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 71468443' at line 1
+
+
+
+TIME:     18:09:2023   16:07:46
+TYPE:     Method error
+REQUEST:     GET /setFound?id=71468443 HTTP/1.1
+EXCEPTION:     1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 71468443' at line 1
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 16, in setFound
+    cursor.execute("UPDATE ducks SET found = TRUE WHERE longid == %s;" % (id))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\cursor.py", line 617, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 1069, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 846, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 71468443' at line 1
+
+
+
+TIME:     18:09:2023   16:08:13
+TYPE:     Method error
+REQUEST:     GET /setFound?id=71468443 HTTP/1.1
+EXCEPTION:     1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 71468443' at line 1
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 16, in setFound
+    cursor.execute("UPDATE ducks SET found = TRUE WHERE longid == '%s';" % (id))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\cursor.py", line 617, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 1069, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 846, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 71468443' at line 1
+
+
+
+TIME:     18:09:2023   16:08:23
+TYPE:     Method error
+REQUEST:     GET /setFound?id=71468443 HTTP/1.1
+EXCEPTION:     1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 71468443' at line 1
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 16, in setFound
+    cursor.execute("UPDATE ducks SET found = TRUE WHERE longid == '%s';" % (id))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\cursor.py", line 617, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 1069, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 846, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 71468443' at line 1
+
+
+
+TIME:     18:09:2023   16:08:29
+TYPE:     Method error
+REQUEST:     GET /setFound?id=71468443 HTTP/1.1
+EXCEPTION:     1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== '71468443'' at line 1
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 16, in setFound
+    cursor.execute("UPDATE ducks SET found = TRUE WHERE longid == '%s';" % (id))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\cursor.py", line 617, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 1069, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\SebSm\AppData\Roaming\Python\Python310\site-packages\mysql\connector\connection.py", line 846, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== '71468443'' at line 1
+
+
+
