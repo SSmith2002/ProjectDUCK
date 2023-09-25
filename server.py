@@ -19,6 +19,10 @@ def getDucks():
     cursor.execute("SELECT found FROM ducks")
     result = cursor.fetchall()
     print(result)
+    data = ""
+    for x in result:
+        data += str(x[0])
+    print(data)
 
 if __name__ == "__main__":
     methods = {"setFound":(setFound,["id"]),

@@ -208,3 +208,68 @@ mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your
 
 
 
+TIME:     25:09:2023   16:20:20
+TYPE:     Method error
+REQUEST:     GET /getDucks HTTP/1.1
+EXCEPTION:     can only concatenate str (not "tuple") to str
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 23, in getDucks
+    data += x
+TypeError: can only concatenate str (not "tuple") to str
+
+
+
+TIME:     25:09:2023   16:20:58
+TYPE:     Method error
+REQUEST:     GET /getDucks HTTP/1.1
+EXCEPTION:     can only concatenate str (not "tuple") to str
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 23, in getDucks
+    print(data)
+TypeError: can only concatenate str (not "tuple") to str
+
+
+
+TIME:     25:09:2023   16:21:08
+TYPE:     Method error
+REQUEST:     GET /getDucks HTTP/1.1
+EXCEPTION:     can only concatenate str (not "tuple") to str
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 23, in getDucks
+    print(data)
+TypeError: can only concatenate str (not "tuple") to str
+
+
+
+TIME:     25:09:2023   16:22:26
+TYPE:     Method error
+REQUEST:     GET /getDucks HTTP/1.1
+EXCEPTION:     can only concatenate str (not "int") to str
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 24, in getDucks
+    data += x[0]
+TypeError: can only concatenate str (not "int") to str
+
+
+
+TIME:     25:09:2023   16:23:23
+TYPE:     Method error
+REQUEST:     GET /getDucks HTTP/1.1
+EXCEPTION:     can only concatenate str (not "int") to str
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 80, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 24, in getDucks
+    data += str(x[0])
+TypeError: can only concatenate str (not "int") to str
+
+
+
