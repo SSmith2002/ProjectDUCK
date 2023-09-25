@@ -12,13 +12,17 @@ mydb = mysql.connector.connect(
 cursor = mydb.cursor()
 
 def setFound(id):
-    print("here")
     cursor.execute("UPDATE ducks SET found = TRUE WHERE longid = %s;" % (id))
     mydb.commit()
-    print("finished")
+
+def getDucks():
+    cursor.execute("SELECT found FROM ducks")
+    result = cursor.fetchall()
+    print(result)
 
 if __name__ == "__main__":
-    methods = {"setFound":(setFound,["id"])}
+    methods = {"setFound":(setFound,["id"]),
+               "getDucks":(getDucks,[])}
 
     server = WebServer(8350,methods)
     server.start()
