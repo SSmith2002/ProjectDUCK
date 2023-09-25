@@ -28,9 +28,16 @@ body,html{
 }
 
 .gridItem{
-    background-color: black;
     margin:auto;
     border:0;
     height:20vh;
     width:20vh;
+}
+
+.found{
+    background-color: green;
+}
+
+.notFound{
+    background-color: red;
 }

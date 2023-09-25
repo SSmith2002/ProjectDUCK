@@ -22,7 +22,7 @@ def getDucks():
     data = ""
     for x in result:
         data += str(x[0])
-    print(data)
+    return data
 
 if __name__ == "__main__":
     methods = {"setFound":(setFound,["id"]),

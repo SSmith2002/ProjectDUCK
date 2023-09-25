@@ -42,6 +42,13 @@ class WebServer:
             request += message.decode()
             print(len(message))
     
+        headers = {"Access-Control-Allow-Origin":"*"}
+        headerString = ""
+        for key in headers.keys():
+            headerString += "%s:%s\n" % (key,headers[key])
+        headerString += '\n'
+        
+
         if(request):
             request = request.split('\n')[0]
             print("Request received: %s" %(request))
@@ -61,10 +68,10 @@ class WebServer:
                     fileContent = file.read()
                     file.close()
 
-                    servResponse = 'HTTP/1.0 200 OK\n\n' + fileContent
+                    servResponse = 'HTTP/1.0 200 OK\n' + headerString + fileContent
                 except Exception as e:
                     writeError("File not found",request,e)
-                    servResponse = 'HTTP1/0 404 NOT FOUND\n\nFile Not Found'
+                    servResponse = 'HTTP1/0 404 NOT FOUND\n' + headerString +  'File Not Found'
             else:
                 methodParams = url.split("?")
                 methodName = methodParams[0]
@@ -78,17 +85,17 @@ class WebServer:
                     if(set(self.methods[methodName][1]).issuperset((paramsDict.keys()))):
                         try:
                             result = str(self.methods[methodName][0](**paramsDict))
-                            servResponse = 'HTTP/1.0 200 OK\n\n' + result
+                            servResponse = 'HTTP/1.0 200 OK\n' + headerString + result
                         except Exception as e:
                             writeError("Method error",request,e)
                             print("ERROR: METHOD ERROR")
-                            servResponse = 'HTTP/1.0 404 NOT FOUND\n\nFile Not Found'
+                            servResponse = 'HTTP1/0 404 NOT FOUND\n' + headerString +  'File Not Found'
                     else:
                         print("ERROR: Params are not suitable for requested method")
-                        servResponse = 'HTTP/1.0 404 NOT FOUND\n\nFile Not Found'
+                        servResponse = 'HTTP1/0 404 NOT FOUND\n' + headerString +  'File Not Found'
                 else:
                     print("ERROR: File/Method not found")
-                    servResponse = 'HTTP/1.0 404 NOT FOUND\n\nFile Not Found'
+                    servResponse = 'HTTP1/0 404 NOT FOUND\n' + headerString +  'File Not Found'
 
             client.sendall(servResponse.encode())
             print("Request handled")
