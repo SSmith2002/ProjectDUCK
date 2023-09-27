@@ -50,18 +50,21 @@ class WebServer:
         
 
         if(request):
-            request = request.split('\n')[0]
+            headersR = request.split('\n')
+            request = headersR[0]
+            accept = headersR[7].split()
+            contentType = accept[1].split('/')
             print("Request received: %s" %(request))
             words = request.split()
             url = words[1][1:]
 
             path = os.getcwd()
             files = os.listdir(path + "/website")
+            images = os.listdir(path + "/website/images")
 
             print(url)
             if(url == "/" or url == ""):
                 url = "index.html"
-
             if(url in files):
                 try:
                     file = open(path + "/website/" + url)
@@ -72,6 +75,19 @@ class WebServer:
                 except Exception as e:
                     writeError("File not found",request,e)
                     servResponse = 'HTTP1/0 404 NOT FOUND\n' + headerString +  'File Not Found'
+                client.sendall(servResponse.encode())
+            elif contentType[0] == "image":
+                print("test")
+                splitRequest = url.split('/')
+                imageName = splitRequest[-1]
+                print(imageName)
+                image = open(path + "/website/images/" + imageName,'rb')
+                imageContent = image.read()
+                image.close()
+                headers["Content-Type"] = "image/png"
+
+                client.send(('HTTP/1.0 200 OK\n' + headerString).encode())
+                client.send(imageContent)
             else:
                 methodParams = url.split("?")
                 methodName = methodParams[0]
@@ -97,7 +113,7 @@ class WebServer:
                     print("ERROR: File/Method not found")
                     servResponse = 'HTTP1/0 404 NOT FOUND\n' + headerString +  'File Not Found'
 
-            client.sendall(servResponse.encode())
+                client.sendall(servResponse.encode())
             print("Request handled")
             
         client.close()
