@@ -4,6 +4,7 @@ from time import *
 import threading
 from datetime import datetime
 import traceback
+import sys
 
 class WebServer:
     def __init__(self,port,methods):
@@ -14,22 +15,28 @@ class WebServer:
         print('Web Server starting on port: %d...' % (self.port))
 
         servSocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-        try:
-            servSocket.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
-            servSocket.bind(('0.0.0.0',self.port))
-            servSocket.listen(1)
-            while True:
-                print("waiting")
+        servSocket.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+        servSocket.bind(('0.0.0.0',self.port))
+        servSocket.listen(1)
+        servSocket.settimeout(0.5)
+
+        while True:
+            try:
                 connSocket,sourceAddr = servSocket.accept()
                 if(connSocket):
                     print("%s connected" %(sourceAddr[0]))
                     newThread = threading.Thread(target=self.handleRequest,args=(connSocket,))
                     newThread.start()
-
-        except Exception as e:
-            servSocket.close()
-            print(e)
-            writeError("Connection","",e)
+            except KeyboardInterrupt:
+                sys.exit()
+            except socket.timeout:
+                pass
+            except Exception as e:
+                print("Test")
+                servSocket.close()
+                print(e)
+                writeError("Connection","",e)
+        
 
     def handleRequest(self,client):
         print("Handling request")

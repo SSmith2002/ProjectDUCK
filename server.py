@@ -35,6 +35,4 @@ if __name__ == "__main__":
 #ctrl c on web server doesnt update until refresh
 #make website
 #fix webServer
-#add image functionality to web server
-#fix web server project to have headers
-#add more headers
+#add more headers to webServer
