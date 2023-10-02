@@ -20,29 +20,41 @@ class WebServer:
         servSocket.listen(1)
         servSocket.settimeout(0.5)
 
-        while True:
-            try:
-                connSocket,sourceAddr = servSocket.accept()
-                if(connSocket):
-                    print("%s connected" %(sourceAddr[0]))
-                    newThread = threading.Thread(target=self.handleRequest,args=(connSocket,))
-                    newThread.start()
-            except KeyboardInterrupt:
-                sys.exit()
-            except socket.timeout:
-                pass
-            except Exception as e:
-                print("Test")
-                servSocket.close()
-                print(e)
-                writeError("Connection","",e)
-        
+        try:
+            while True:
+                try:
+                    print("test")
+                    connSocket,sourceAddr = servSocket.accept()
+                    if(connSocket):
+                        print("%s connected" %(sourceAddr[0]))
+                        newThread = threading.Thread(target=self.handleRequest,args=(connSocket,))
+                        newThread.start()
+                except KeyboardInterrupt:
+                    pass
+                except socket.timeout:
+                    pass
+                except Exception as e:
+                    print("Test")
+                    servSocket.close()
+                    print(e)
+                    writeError("Connection","",e)
+                    break
+
+        except KeyboardInterrupt:
+            print("Keyboard Interrupt")
+            servSocket.close()
+            sys.exit(0)
 
     def handleRequest(self,client):
         print("Handling request")
-        
-        message = client.recv(1024)
+        client.settimeout(0.5) #may cause errors later
+        try:
+            message = client.recv(1024)
+        except socket.timeout:
+            print("Request Timed out")
+            return
         request = message.decode()
+        print("THREAD2")
         while(len(message) == 1024):
             sleep(0.01)
             message = client.recv(1024)
@@ -55,7 +67,7 @@ class WebServer:
             headerString += "%s:%s\n" % (key,headers[key])
         headerString += '\n'
         
-
+        print("THREAD1")
         if(request):
             headersR = request.split('\n')
             request = headersR[0]
@@ -67,7 +79,6 @@ class WebServer:
 
             path = os.getcwd()
             files = os.listdir(path + "/website")
-            images = os.listdir(path + "/website/images")
 
             print(url)
             if(url == "/" or url == ""):
@@ -122,8 +133,10 @@ class WebServer:
 
                 client.sendall(servResponse.encode())
             print("Request handled")
-            
+        
+        print("THREAD3")
         client.close()
+        return
     
 def writeError(type,request,exception):
     now = datetime.now()

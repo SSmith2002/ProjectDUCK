@@ -299,3 +299,16 @@ TimeoutError: timed out
 
 
 
+TIME:     02:10:2023   12:26:04
+TYPE:     Connection
+REQUEST:     
+EXCEPTION:     timed out
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 26, in start
+    connSocket,sourceAddr = servSocket.accept()
+  File "C:\Python310\lib\socket.py", line 293, in accept
+    fd, addr = self._accept()
+TimeoutError: timed out
+
+
+

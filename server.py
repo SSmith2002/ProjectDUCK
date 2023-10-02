@@ -23,9 +23,10 @@ if __name__ == "__main__":
     server = WebServer(8350,methods)
     server.start()
 
-#put details in file and read rather than plaintext
 #ctrl c on web server doesnt update until refresh
 #make website
 #fix webServer
 #add more headers to webServer
 #add favicon support
+
+#FIX KEYBOARD INTERRUPT
