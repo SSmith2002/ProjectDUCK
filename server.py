@@ -1,13 +1,5 @@
 from webServer import *
-import mysql.connector
-
-#put details in file and read rather than plaintext
-mydb = mysql.connector.connect(
-    host = "localhost",
-    username = "root",
-    password = "SebSmith2002!",
-    database = "ducks"
-)
+from dbDetails import mydb
 
 cursor = mydb.cursor()
 
@@ -36,3 +28,4 @@ if __name__ == "__main__":
 #make website
 #fix webServer
 #add more headers to webServer
+#add favicon support
