@@ -22,11 +22,3 @@ if __name__ == "__main__":
 
     server = WebServer(8350,methods)
     server.start()
-
-#ctrl c on web server doesnt update until refresh
-#make website
-#fix webServer
-#add more headers to webServer
-#add favicon support
-
-#FIX KEYBOARD INTERRUPT
