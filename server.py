@@ -34,7 +34,7 @@ if __name__ == "__main__":
 #Have ducks say their number
 
 #Improve website, send ideas to maddy etc
-
+#style for mobile
 
 
 
