@@ -60,14 +60,7 @@ class WebServer:
             message = client.recv(1024)
             request += message.decode()
             print(len(message))
-    
-        headers = {"Access-Control-Allow-Origin":"*"}
-        headerString = ""
-        for key in headers.keys():
-            headerString += "%s:%s\n" % (key,headers[key])
-        headerString += '\n'
         
-        print("THREAD1")
         if(request):
             headersR = request.split('\n')
             request = headersR[0]
@@ -76,6 +69,12 @@ class WebServer:
             print("Request received: %s" %(request))
             words = request.split()
             url = words[1][1:]
+
+            headers = {"Access-Control-Allow-Origin":"*"}
+            headerString = ""
+            for key in headers.keys():
+                headerString += "%s:%s\n" % (key,headers[key])
+            headerString += '\n'
 
             path = os.getcwd()
             files = os.listdir(path + "/website")
@@ -137,7 +136,22 @@ class WebServer:
         print("THREAD3")
         client.close()
         return
-    
+
+def loadFile(fileName="index.html"):
+    path = os.getcwd()
+    files = os.listdir(path + "/website")
+
+    if(fileName in files):
+        file = open(path + "/website/" + fileName)
+        fileContent = file.read()
+        file.close()
+
+        return fileContent
+
+        
+
+
+
 def writeError(type,request,exception):
     now = datetime.now()
 
