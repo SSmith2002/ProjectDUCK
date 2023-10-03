@@ -52,8 +52,11 @@ body,html{
     box-shadow: 0px 0px 50px 5px black;
     border-radius:15px;
     text-align: center;
-    display:block;
     justify-content: center;
+}
+
+#popup{
+    display:block;
 }
 
 .mainText{
