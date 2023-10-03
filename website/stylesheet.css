@@ -42,12 +42,38 @@ body,html{
 .popup{
     position:fixed;
     z-index: 10;
-    width:50vh;
+    width:50vw;
     height:50vh;
     left:50%;
     bottom:50%;
-    margin-left:-25vh;
+    margin-left:-25vw;
     margin-bottom:-25vh;
     background-color: white;
-    box-shadow: 0px 0px 25px 0px black;
+    box-shadow: 0px 0px 50px 5px black;
+    border-radius:15px;
+    text-align: center;
+    display:block;
+    justify-content: center;
+}
+
+.mainText{
+    height:75%;
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+
+.bottomText{
+    height:25%;
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+
+h1{
+    margin:auto;
+}
+
+h2{
+    margin:auto;
 }

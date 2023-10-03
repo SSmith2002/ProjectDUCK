@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
 #Improve website, send ideas to maddy etc
 #style for mobile
-
+#remove print statements
 
 
 #RPI products
