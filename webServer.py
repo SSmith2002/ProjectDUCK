@@ -90,7 +90,10 @@ class WebServer:
                     writeError("File not found",request,e)
                     servResponse = 'HTTP1/0 404 NOT FOUND\n' + headerString +  'File Not Found'
                 client.sendall(servResponse.encode())
+                print("CONTENT TYPE:")
+                print(contentType[0])
             elif contentType[0] == "image":
+                print("IS AN IMAGE")
                 splitRequest = url.split('/')
                 imageName = splitRequest[-1]
                 print(imageName)
