@@ -1,12 +1,7 @@
-import mysql.connector
+import sqlite3
 import random
 
-mydb = mysql.connector.connect(
-    host = "localhost",
-    username = "root",
-    password = "SebSmith2002!",
-    database = "ducks"
-)
+mydb = sqlite3.connect("ducksDB.db")
 
 cursor = mydb.cursor()
 cursor.execute("DROP TABLE IF EXISTS ducks")
@@ -20,7 +15,6 @@ for i in range(64):
         longid += str(digit)
     
     longid = int(longid)
-    print(longid)
 
     cursor.execute("INSERT INTO ducks VALUES (%d,%d,FALSE)" % (i,longid))
 
