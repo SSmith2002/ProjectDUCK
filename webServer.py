@@ -61,9 +61,9 @@ class WebServer:
         if(request):
             headersR = request.split('\n')
             request = headersR[0]
-            accept = headersR[4].split()
-            contentType = accept[1].split('/')
-            print(accept)
+            headersDict = createHeadersDict(headersR[1:])
+            accept = headersDict["Accept"]
+            contentType = accept.split('/')
             print("Request received: %s" %(request))
             words = request.split()
             url = words[1][1:]
@@ -91,10 +91,7 @@ class WebServer:
                     writeError("File not found",request,e)
                     servResponse = 'HTTP1/0 404 NOT FOUND\n' + headerString +  'File Not Found'
                 client.sendall(servResponse.encode())
-                print("CONTENT TYPE:")
-                print(contentType)
             elif contentType[0] == "image":
-                print("IS AN IMAGE")
                 splitRequest = url.split('/')
                 imageName = splitRequest[-1]
                 print(imageName)
@@ -147,7 +144,12 @@ def loadFile(fileName="index.html"):
 
         return fileContent
 
-        
+def createHeadersDict(headersList):
+    headersDict = {}
+    for header in headersList:
+        index = header.find(":")
+        headersDict[header[:index]] = header[index+2:]
+    return headersDict
 
 
 

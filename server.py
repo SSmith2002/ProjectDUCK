@@ -33,4 +33,5 @@ if __name__ == "__main__":
 #style for mobile
 #remove print statements
 
-#images dont work
+#images dont work - glitched
+#dont use accept[4] for accepted images - make headers a dictionary, look for "accepted"

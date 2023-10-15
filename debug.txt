@@ -312,3 +312,94 @@ TimeoutError: timed out
 
 
 
+TIME:     15:10:2023   22:19:17
+TYPE:     Method error
+REQUEST:     GET /getDucks HTTP/1.1
+EXCEPTION:     SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 7108 and this is thread id 19652.
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 120, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 14, in getDucks
+    cursor.execute("SELECT found FROM ducks")
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 7108 and this is thread id 19652.
+
+
+
+TIME:     15:10:2023   22:19:51
+TYPE:     Method error
+REQUEST:     GET /getDucks HTTP/1.1
+EXCEPTION:     SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 11632 and this is thread id 17312.
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 121, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 14, in getDucks
+    cursor.execute("SELECT found FROM ducks")
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 11632 and this is thread id 17312.
+
+
+
+TIME:     15:10:2023   22:26:54
+TYPE:     Method error
+REQUEST:     GET /getDucks HTTP/1.1
+EXCEPTION:     SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 868 and this is thread id 10140.
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 121, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 14, in getDucks
+    cursor.execute("SELECT found FROM ducks")
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 868 and this is thread id 10140.
+
+
+
+TIME:     15:10:2023   22:27:20
+TYPE:     Method error
+REQUEST:     GET /getDucks HTTP/1.1
+EXCEPTION:     SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 992 and this is thread id 5252.
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 121, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 14, in getDucks
+    cursor.execute("SELECT found FROM ducks")
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 992 and this is thread id 5252.
+
+
+
+TIME:     15:10:2023   22:27:53
+TYPE:     Method error
+REQUEST:     GET /getDucks HTTP/1.1
+EXCEPTION:     SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 18264 and this is thread id 9468.
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 121, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 14, in getDucks
+    cursor.execute("SELECT found FROM ducks")
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 18264 and this is thread id 9468.
+
+
+
+TIME:     15:10:2023   22:28:22
+TYPE:     Method error
+REQUEST:     GET /getDucks HTTP/1.1
+EXCEPTION:     SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 12876 and this is thread id 17764.
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 122, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 14, in getDucks
+    cursor.execute("SELECT found FROM ducks")
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 12876 and this is thread id 17764.
+
+
+
+TIME:     15:10:2023   22:29:55
+TYPE:     Method error
+REQUEST:     GET /getDucks HTTP/1.1
+EXCEPTION:     SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 9428 and this is thread id 3160.
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 122, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 14, in getDucks
+    cursor.execute("SELECT found FROM ducks")
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 9428 and this is thread id 3160.
+
+
+
