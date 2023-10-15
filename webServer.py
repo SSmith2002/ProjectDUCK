@@ -63,7 +63,7 @@ class WebServer:
             request = headersR[0]
             accept = headersR[7].split()
             contentType = accept[1].split('/')
-            print(accept)
+            print(headersR)
             print("Request received: %s" %(request))
             words = request.split()
             url = words[1][1:]
