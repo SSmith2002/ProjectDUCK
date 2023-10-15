@@ -403,3 +403,16 @@ sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in
 
 
 
+TIME:     15:10:2023   22:31:33
+TYPE:     Method error
+REQUEST:     GET /getDucks HTTP/1.1
+EXCEPTION:     SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 9428 and this is thread id 16000.
+TRACEBACK:     Traceback (most recent call last):
+  File "C:\Users\SebSm\projects\ProjectDUCK\webServer.py", line 122, in handleRequest
+    servResponse = 'HTTP1/0 404 NOT FOUND\n' + headerString +  'File Not Found'
+  File "C:\Users\SebSm\projects\ProjectDUCK\server.py", line 14, in getDucks
+    cursor.execute("SELECT found FROM ducks")
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 9428 and this is thread id 16000.
+
+
+
