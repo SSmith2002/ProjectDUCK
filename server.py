@@ -1,16 +1,18 @@
 from webServer import *
 import sqlite3
 
-mydb = sqlite3.connect("ducksDB.db")
-
-cursor = mydb.cursor()
-
 def setFound(id):
+    mydb = sqlite3.connect("ducksDB.db")
+    cursor = mydb.cursor()
+
     cursor.execute("UPDATE ducks SET found = TRUE WHERE longid = %s;" % (id))
     mydb.commit()
     return loadFile()
 
 def getDucks():
+    mydb = sqlite3.connect("ducksDB.db")
+    cursor = mydb.cursor()
+    
     cursor.execute("SELECT found FROM ducks")
     result = cursor.fetchall()
     data = ""
