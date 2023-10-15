@@ -23,7 +23,6 @@ class WebServer:
         try:
             while True:
                 try:
-                    print("test")
                     connSocket,sourceAddr = servSocket.accept()
                     if(connSocket):
                         print("%s connected" %(sourceAddr[0]))
@@ -34,7 +33,6 @@ class WebServer:
                 except socket.timeout:
                     pass
                 except Exception as e:
-                    print("Test")
                     servSocket.close()
                     print(e)
                     writeError("Connection","",e)
@@ -54,7 +52,6 @@ class WebServer:
             print("Request Timed out")
             return
         request = message.decode()
-        print("THREAD2")
         while(len(message) == 1024):
             sleep(0.01)
             message = client.recv(1024)
@@ -94,7 +91,6 @@ class WebServer:
                     servResponse = 'HTTP1/0 404 NOT FOUND\n' + headerString +  'File Not Found'
                 client.sendall(servResponse.encode())
             elif contentType[0] == "image":
-                print("test")
                 splitRequest = url.split('/')
                 imageName = splitRequest[-1]
                 print(imageName)
@@ -133,7 +129,6 @@ class WebServer:
                 client.sendall(servResponse.encode())
             print("Request handled")
         
-        print("THREAD3")
         client.close()
         return
 
