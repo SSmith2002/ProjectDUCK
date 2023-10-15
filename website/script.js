@@ -28,7 +28,7 @@ function loadGrid(rows,cols){
 document.body.onmousedown = function(eventData){
     console.log("entered function")
     let popup = document.getElementById("popup");
-    let style = getComputedStyle(popup);
+    let style = getComputedStyle(popup); 
     if(eventData.button == 0 && style.display == "block"){
         console.log("entered if")
         popup.style.display = "none";
