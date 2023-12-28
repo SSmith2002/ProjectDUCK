@@ -38,7 +38,7 @@ class WebServer:
                     writeError("Connection","",e)
                     break
 
-        except KeyboardInterrupt:
+        except:
             print("Keyboard Interrupt")
             servSocket.close()
             sys.exit(0)
@@ -133,10 +133,11 @@ class WebServer:
         client.close()
         return
 
-def loadFile(fileName="index.html"):
+def loadFile(fileName="index.html",vars=()):
     path = os.getcwd()
     files = os.listdir(path + "/website")
 
+    fileContent = None
     if(fileName in files):
         file = open(path + "/website/" + fileName)
         fileContent = file.read()

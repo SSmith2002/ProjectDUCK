@@ -4,8 +4,8 @@ import sqlite3
 
 PORT = 8350
 DPI = 300
-sizecm = 1
-qrcodesize = 21
+sizecm = 0.75
+qrcodesize = 29
 
 mydb = sqlite3.connect("ducksDB.db")
 
@@ -14,21 +14,23 @@ cursor.execute("SELECT longid FROM ducks")
 
 idList = cursor.fetchall()
 qrcodes = []
-url = "localhost:" + str(PORT) + "/setFound?%d"
+url = "192.168.1.203:" + str(PORT) + "/f?id=%d"
 
 for id in idList:
     id = id[0]
 
     qr = qrcode.QRCode(
-        version=1,
+        version=None,
         box_size=int(((DPI / 2.54) * sizecm)/qrcodesize)+1,
-        border=1,
+        border=0,
     )
     qr.add_data(url % (id))
     qr.make(fit=True)
     img = qr.make_image(fill_color="black", back_color="white")
 
     qrcodes.append(img)
+
+qrcodes[0].save("single.png")
 
 width, height = int(8.27 * DPI), int(11.7 * DPI) # A4 at 300dpi
 gridsize = len(qrcodes) ** 0.5

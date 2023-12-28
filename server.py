@@ -7,7 +7,7 @@ def setFound(id):
 
     cursor.execute("UPDATE ducks SET found = TRUE WHERE longid = %s;" % (id))
     mydb.commit()
-    return loadFile()
+    return loadFile("indexFound.html")
 
 def getDucks():
     mydb = sqlite3.connect("ducksDB.db")
@@ -21,22 +21,21 @@ def getDucks():
     return data
 
 if __name__ == "__main__":
-    methods = {"setFound":(setFound,["id"]),
+    methods = {"f":(setFound,["id"]),
                "getDucks":(getDucks,[])}
 
     server = WebServer(8350,methods)
     server.start()
 
-#When finding duck, popup to say "Duck # found!" or "Duck # already found!"
+#When finding duck, popup to say "Duck # found!" or "Duck # already found!" ####
 #When call setFound, load index
 #Have ducks say their number
 
 #Improve website, send ideas to maddy etc
-#style for mobile
+#style for mobile ####
 #remove print statements
 
-#images dont work - glitched
-#dont use accept[4] for accepted images - make headers a dictionary, look for "accepted"
+#images dont work - glitched #####
 
 
 

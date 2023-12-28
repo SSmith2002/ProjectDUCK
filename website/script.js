@@ -1,7 +1,7 @@
 function loadGrid(rows,cols){
     let grid = document.getElementById("grid");
 
-    fetch("http://192.168.1.211:8350/getDucks").then(function(response) {
+    fetch("http://192.168.1.203:8350/getDucks").then(function(response) {
         return response.text();
       }).then(function(data) {
         for(x=0;x<rows;x++){
