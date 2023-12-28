@@ -18,6 +18,7 @@ function loadGrid(rows,cols){
                 }
                 let id = "row" + x + "col" + y;
                 duck.id = id;
+                duck.innerHTML = duckNumber
     
                 grid.appendChild(duck);
             }

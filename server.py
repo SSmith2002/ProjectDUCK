@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
 #write duck numbers
 
-
+#gitignore databse, images, debug
 
 #Eventually - before deployment:
 #remove db from git - put in gitignore
