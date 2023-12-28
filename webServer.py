@@ -143,7 +143,24 @@ def loadFile(fileName="index.html",vars=()):
         fileContent = file.read()
         file.close()
 
-        return fileContent
+    if len(vars) > 0:
+        fileContent = replaceFiller(fileContent,vars)
+
+    return fileContent
+
+def replaceFiller(content,vars):
+    if len(vars) > 0:
+        counter = 0
+        for i in range(len(content)):
+            if content[i:i+3] == "###":
+                content = content[:i] + str(vars[counter]) + content[i+3:]
+                counter +=1 
+                if counter == len(vars):
+                    break
+        return content
+    else:
+        return content
+
 
 def createHeadersDict(headersList):
     headersDict = {}

@@ -7,7 +7,10 @@ def setFound(id):
 
     cursor.execute("UPDATE ducks SET found = TRUE WHERE longid = %s;" % (id))
     mydb.commit()
-    return loadFile("indexFound.html")
+
+    cursor.execute("SELECT id FROM ducks WHERE longid = %s;" % (id))
+    shortid = cursor.fetchone()[0]
+    return loadFile("indexFound.html",(shortid+1,))
 
 def getDucks():
     mydb = sqlite3.connect("ducksDB.db")
@@ -27,9 +30,7 @@ if __name__ == "__main__":
     server = WebServer(8350,methods)
     server.start()
 
-#When finding duck, popup to say "Duck # found!" or "Duck # already found!" ####
-#When call setFound, load index
-#Have ducks say their number
+#When finding duck "Duck # already found!" ####
 
 #Improve website, send ideas to maddy etc
 #style for mobile ####

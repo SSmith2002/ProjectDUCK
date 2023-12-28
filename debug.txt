@@ -442,3 +442,48 @@ sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in
 
 
 
+TIME:     28:12:2023   16:09:58
+TYPE:     Method error
+REQUEST:     GET /f?id=84701130 HTTP/1.1
+EXCEPTION:     unsupported operand type(s) for ^: 'str' and 'str'
+TRACEBACK:     Traceback (most recent call last):
+  File "/home/pi/projects/ProjectDUCK/webServer.py", line 117, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "/home/pi/projects/ProjectDUCK/server.py", line 11, in setFound
+    cursor.execute("SELECT id FROM ducks WHERE longid = %s;" ^ (id))
+TypeError: unsupported operand type(s) for ^: 'str' and 'str'
+
+
+
+TIME:     28:12:2023   16:11:23
+TYPE:     Method error
+REQUEST:     GET /f?id=84701130 HTTP/1.1
+EXCEPTION:     object of type 'int' has no len()
+TRACEBACK:     Traceback (most recent call last):
+  File "/home/pi/projects/ProjectDUCK/webServer.py", line 117, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "/home/pi/projects/ProjectDUCK/server.py", line 13, in setFound
+    return loadFile("indexFound.html",(shortid))
+  File "/home/pi/projects/ProjectDUCK/webServer.py", line 146, in loadFile
+    if len(vars) > 0:
+TypeError: object of type 'int' has no len()
+
+
+
+TIME:     28:12:2023   16:12:37
+TYPE:     Method error
+REQUEST:     GET /f?id=84701130 HTTP/1.1
+EXCEPTION:     'str' object does not support item assignment
+TRACEBACK:     Traceback (most recent call last):
+  File "/home/pi/projects/ProjectDUCK/webServer.py", line 117, in handleRequest
+    result = str(self.methods[methodName][0](**paramsDict))
+  File "/home/pi/projects/ProjectDUCK/server.py", line 13, in setFound
+    return loadFile("indexFound.html",(shortid,))
+  File "/home/pi/projects/ProjectDUCK/webServer.py", line 147, in loadFile
+    fileContent = replaceFiller(fileContent,vars)
+  File "/home/pi/projects/ProjectDUCK/webServer.py", line 156, in replaceFiller
+    content[i:i+3] = str(vars[counter])
+TypeError: 'str' object does not support item assignment
+
+
+
