@@ -4,7 +4,7 @@ import sqlite3
 
 PORT = 8350
 DPI = 300
-sizecm = 0.75
+sizecm = 0.8
 qrcodesize = 29
 
 mydb = sqlite3.connect("ducksDB.db")

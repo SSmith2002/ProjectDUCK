@@ -80,3 +80,15 @@ h1{
 h2{
     margin:auto;
 }
+
+@media (max-width: 800px){
+    .gridContainer{
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    }
+
+    .gridItem{
+        height:10vh;
+        width:10vh;
+    }
+}

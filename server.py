@@ -38,13 +38,14 @@ if __name__ == "__main__":
     server = WebServer(8350,methods)
     server.start()
 
-#When finding duck "Duck # already found!" ####
-
 #Improve website, send ideas to maddy etc
-#style for mobile ####
+#style for mobile 
 #remove print statements
 
-#images dont work - glitched #####
+#images dont work - glitched probably due to wwifi
+    #get usb ethernet
+
+#write duck numbers
 
 
 
