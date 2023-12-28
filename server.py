@@ -5,12 +5,20 @@ def setFound(id):
     mydb = sqlite3.connect("ducksDB.db")
     cursor = mydb.cursor()
 
+    cursor.execute("SELECT id FROM ducks WHERE longid = %s;" % (id))
+    shortid = cursor.fetchone()[0] + 1
+
+    cursor.execute("SELECT found FROM ducks WHERE longid = %s;" % (id))
+    isFound = cursor.fetchone()[0]
+    if isFound == 1:
+        message = "Duck %d has already been found." % (shortid)
+        return loadFile("indexFound.html",(message,))
+
     cursor.execute("UPDATE ducks SET found = TRUE WHERE longid = %s;" % (id))
     mydb.commit()
 
-    cursor.execute("SELECT id FROM ducks WHERE longid = %s;" % (id))
-    shortid = cursor.fetchone()[0]
-    return loadFile("indexFound.html",(shortid+1,))
+    message = "You have found duck %d!" % (shortid)
+    return loadFile("indexFound.html",(message,))
 
 def getDucks():
     mydb = sqlite3.connect("ducksDB.db")
