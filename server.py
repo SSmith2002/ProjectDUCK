@@ -41,6 +41,11 @@ if __name__ == "__main__":
 #Improve website, send ideas to maddy etc
 #style for mobile 
 #remove print statements
+    
+#change IP to home IP - 192.168.1.211
+#recreate database
+#recreate qrcodes
+#print on label paper
 
 #images dont work - glitched probably due to wwifi
     #get usb ethernet
