@@ -4,7 +4,7 @@ import sqlite3
 
 PORT = 8350
 DPI = 300
-sizecm = 0.8
+sizecm = 0.75
 qrcodesize = 29
 
 mydb = sqlite3.connect("ducksDB.db")
@@ -14,7 +14,7 @@ cursor.execute("SELECT longid FROM ducks")
 
 idList = cursor.fetchall()
 qrcodes = []
-url = "192.168.1.203:" + str(PORT) + "/f?id=%d"
+url = "192.168.1.211:" + str(PORT) + "/f?id=%d"
 
 for id in idList:
     id = id[0]
