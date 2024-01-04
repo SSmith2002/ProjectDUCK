@@ -58,6 +58,7 @@ body,html{
 
 #popup{
     display:block;
+    background-color: yellow;
 }
 
 .mainText{

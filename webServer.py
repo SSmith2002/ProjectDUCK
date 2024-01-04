@@ -97,11 +97,12 @@ class WebServer:
                 print(imageName)
                 image = open(path + "/website/images/" + imageName,'rb')
                 imageContent = image.read()
+                print("Image Length: " + str(len(imageContent)))
                 image.close()
                 headers["Content-Type"] = "image/png"
 
                 client.send(('HTTP/1.0 200 OK\n' + headerString).encode())
-                client.send(imageContent)
+                client.sendall(imageContent)
             else:
                 methodParams = url.split("?")
                 methodName = methodParams[0]
@@ -193,8 +194,5 @@ def writeError(type,request,exception):
 #track unique users
 #track user locations
 
-#feature for bug report/crash report
-
-
-
 #after a crash, doesnt respond, should do as in new thread
+#cant download images from inspect element

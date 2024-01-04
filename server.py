@@ -39,20 +39,11 @@ if __name__ == "__main__":
     server.start()
 
 #Improve website, send ideas to maddy etc
-#style for mobile 
+#style for mobile
 #remove print statements
-    
-#change IP to home IP - 192.168.1.211
-#recreate database
-#recreate qrcodes
-#print on label paper
-
-#images dont work - glitched probably due to wwifi
-    #get usb ethernet
-
-#write duck numbers
-
-#gitignore databse, images, debug
 
 #Eventually - before deployment:
 #remove db from git - put in gitignore
+#gitignore databse, images, debug
+
+#get domain name and portforward IP
